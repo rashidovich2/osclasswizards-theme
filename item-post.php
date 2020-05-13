@@ -138,7 +138,7 @@
                   </div>
               <?php } ?>
               <?php
-              if (osclasswizards_is_region_default()) { ?>
+              if (osclasswizards_is_region_default() && Params::getParam('action') != 'item_edit') { ?>
                   <?php ItemForm::add_hidden_field("fk_i_region_id", osc_get_preference('region_default', 'osclasswizards_theme')); ?>
               <?php } else { ?>
                   <div class="form-group">
@@ -168,19 +168,15 @@
               </label>
               <div class="controls">
                 <?php
-				//if(osclasswizards_locations_input_as() =='select'){
+                    $cities = null;
+                    if(osclasswizards_is_region_default()) {
+                        $cities = osc_get_cities(osc_get_preference('region_default', 'osclasswizards_theme'));
+                    }
                     if(Params::getParam('action') != 'item_edit') {
-                        $cities = null;
-                        if(osclasswizards_is_region_default()) {
-                            $cities = osc_get_cities(osc_get_preference('region_default', 'osclasswizards_theme'));
-                        }
                         ItemForm::city_select($cities, osc_item());
                     } else {
                         ItemForm::city_select(osc_get_cities(osc_user_region_id()), osc_user());
                     }
-                /*}else{
-					ItemForm::city_text(osc_user());
-				}*/
 			    ?>
               </div>
             </div>
