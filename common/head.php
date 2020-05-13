@@ -25,8 +25,7 @@
         'cancel' => __('Cancel', OSCLASSWIZARDS_THEME_FOLDER)
     );
 
-	//osc_register_script('jquery', osc_current_web_theme_js_url('jquery-3.3.1.min.js'));
-    osc_register_script('jquery', osc_base_url() . 'oc-includes/osclass/gui/js/jquery.js');
+	osc_register_script('jquery', osc_base_url() . 'oc-includes/osclass/gui/js/jquery.js');
     osc_enqueue_script('jquery');
     osc_enqueue_script('jquery-ui');
 	osc_register_script('fancybox', osc_current_web_theme_url('js/fancybox/jquery.fancybox.pack.js'), array('jquery'));
