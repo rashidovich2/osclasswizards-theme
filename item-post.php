@@ -124,53 +124,67 @@
             <h2>
               <?php _e('Listing Location', OSCLASSWIZARDS_THEME_FOLDER); ?>
             </h2>
-            <div class="form-group">
-              <label class="control-label" for="country">
-                <?php _e('Country', OSCLASSWIZARDS_THEME_FOLDER); ?>
-              </label>
-              <div class="controls">
-                <?php ItemForm::country_select(osc_get_countries(), osc_user()); ?>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="control-label" for="region">
-                <?php _e('Region', OSCLASSWIZARDS_THEME_FOLDER); ?>
-              </label>
-              <div class="controls">
-                <?php 
-				if(osclasswizards_locations_input_as() =='select'){ 
-                    if(count(osc_get_countries()) > 1){
-                        ItemForm::region_select(osc_get_regions(osc_user_field('fk_c_country_code')),osc_user());
-                    }else{
-                        $aCountries = osc_get_countries();
-                        $aRegions = osc_get_regions($aCountries[0]['pk_c_code']);
-                        ItemForm::region_select($aRegions,osc_user());
-                    }
-				}else{
-					ItemForm::region_text(osc_user());
-				}
-			?>
-              </div>
-            </div>
+              <?php
+              if (osclasswizards_is_country_default()) { ?>
+                  <?php ItemForm::add_hidden_field("fk_c_country_code", osc_get_preference('country_default', 'osclasswizards_theme')); ?>
+              <?php } else { ?>
+                  <div class="form-group">
+                      <label class="control-label" for="country">
+                          <?php _e('Country', OSCLASSWIZARDS_THEME_FOLDER); ?>
+                      </label>
+                      <div class="controls">
+                          <?php ItemForm::country_select(osc_get_countries(), osc_user()); ?>
+                      </div>
+                  </div>
+              <?php } ?>
+              <?php
+              if (osclasswizards_is_region_default()) { ?>
+                  <?php ItemForm::add_hidden_field("fk_i_region_id", osc_get_preference('region_default', 'osclasswizards_theme')); ?>
+              <?php } else { ?>
+                  <div class="form-group">
+                      <label class="control-label" for="region">
+                          <?php _e('Region', OSCLASSWIZARDS_THEME_FOLDER); ?>
+                      </label>
+                      <div class="controls">
+                          <?php
+                          if(osclasswizards_locations_input_as() =='select'){
+                              if(count(osc_get_countries()) > 1){
+                                  ItemForm::region_select(osc_get_regions(osc_user_field('fk_c_country_code')),osc_user());
+                              }else{
+                                  $aCountries = osc_get_countries();
+                                  $aRegions = osc_get_regions($aCountries[0]['pk_c_code']);
+                                  ItemForm::region_select($aRegions,osc_user());
+                              }
+                          }else{
+                              ItemForm::region_text(osc_user());
+                          }
+                          ?>
+                      </div>
+                  </div>
+              <?php } ?>
             <div class="form-group">
               <label class="control-label" for="city">
                 <?php _e('City', OSCLASSWIZARDS_THEME_FOLDER); ?>
               </label>
               <div class="controls">
-                <div class="a">
-                <?php 
-				if(osclasswizards_locations_input_as() =='select'){ 
+                <?php
+				//if(osclasswizards_locations_input_as() =='select'){
                     if(Params::getParam('action') != 'item_edit') {
-                        ItemForm::city_select(null, osc_item());
+                        $cities = null;
+                        if(osclasswizards_is_region_default()) {
+                            $cities = osc_get_cities(osc_get_preference('region_default', 'osclasswizards_theme'));
+                        }
+                        ItemForm::city_select($cities, osc_item());
                     } else {
                         ItemForm::city_select(osc_get_cities(osc_user_region_id()), osc_user());
                     }
-                }else{
+                /*}else{
 					ItemForm::city_text(osc_user());
-				}
-			?></div>
+				}*/
+			    ?>
               </div>
             </div>
+              <?php if(osclasswizards_zone_required()) { ?>
             <div class="form-group">
               <label class="control-label" for="cityArea">
                 <?php _e('City Area', OSCLASSWIZARDS_THEME_FOLDER); ?>
@@ -179,6 +193,7 @@
                 <?php ItemForm::city_area_text(osc_user()); ?>
               </div>
             </div>
+              <?php } if(osclasswizards_zipcode_required()) { ?>
             <div class="form-group">
               <label class="control-label" for="address">
                 <?php _e('Address', OSCLASSWIZARDS_THEME_FOLDER); ?>
@@ -187,6 +202,7 @@
                 <?php ItemForm::address_text(osc_user()); ?>
               </div>
             </div>
+              <?php } ?>
           </div>
           <!-- seller info -->
           <?php if(!osc_is_web_user_logged_in() ) { ?>

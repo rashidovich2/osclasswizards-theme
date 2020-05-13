@@ -74,7 +74,7 @@
           <?php } ?>
         </li>
         <li>
-          <?php if ( osc_item_pub_date() !== '' ) { printf( __('<i class="far fa-calendar"></i> Published date: %1$s', OSCLASSWIZARDS_THEME_FOLDER), osc_format_date( osc_item_pub_date() ) ); } ?>
+          <?php if ( osc_item_pub_date() !== '' ) { printf( __('<i class="fa fa-calendar-o"></i> Published date: %1$s', OSCLASSWIZARDS_THEME_FOLDER), osc_format_date( osc_item_pub_date() ) ); } ?>
         </li>
         <li>
           <?php if ( osc_item_mod_date() !== '' ) { printf( __('<span class="update"><i class="far fa-calendar-alt"></i> Modified date:</span> %1$s', OSCLASSWIZARDS_THEME_FOLDER), osc_format_date( osc_item_mod_date() ) ); } ?>

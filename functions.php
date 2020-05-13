@@ -586,12 +586,23 @@ DEFINES
 			case('templates_item_post'):
 				$locations_input_as	=	Params::getParam('locations_input_as', 'osclasswizards_theme');
 				$locations_required	=	Params::getParam('locations_required', 'osclasswizards_theme');
+                $city_required      =	Params::getParam('city_required', 'osclasswizards_theme');
+                $zone_required      =	Params::getParam('zone_required', 'osclasswizards_theme');
+                $zipcode_required   =	Params::getParam('zipcode_required', 'osclasswizards_theme');
+				$country_default    =   Params::getParam('countryId', 'osclasswizards_theme');
+                $region_default     =   Params::getParam('regionId', 'osclasswizards_theme');
+
 				$category_multiple_selects	=	Params::getParam('category_multiple_selects', 'osclasswizards_theme');
 				osc_set_preference('title_minimum_length', Params::getParam('title_minimum_length', 'osclasswizards_theme'), 'osclasswizards_theme');
 				osc_set_preference('description_minimum_length', Params::getParam('description_minimum_length', 'osclasswizards_theme'), 'osclasswizards_theme');
 				osc_set_preference('locations_input_as', $locations_input_as, 'osclasswizards_theme');
 				osc_set_preference('locations_required', ($locations_required ? '1' : '0'), 'osclasswizards_theme');
+                osc_set_preference('city_required', ($city_required ? '1' : '0'), 'osclasswizards_theme');
+                osc_set_preference('zone_required', ($zone_required ? '1' : '0'), 'osclasswizards_theme');
+                osc_set_preference('zipcode_required', ($zipcode_required ? '1' : '0'), 'osclasswizards_theme');
 				osc_set_preference('category_multiple_selects', ($category_multiple_selects ? '1' : '0'), 'osclasswizards_theme');
+                osc_set_preference('country_default', $country_default, 'osclasswizards_theme');
+                osc_set_preference('region_default', $region_default, 'osclasswizards_theme');
 				
 				osc_add_flash_ok_message(__('Templates settings updated correctly', OSCLASSWIZARDS_THEME_FOLDER), 'admin');
 				osc_redirect_to(osc_admin_render_theme_url( 'oc-content/themes/'.OSCLASSWIZARDS_THEME_FOLDER.'/admin/settings.php#templates' ));
@@ -902,7 +913,7 @@ function osclasswizards_item_post_form_validate(){
 				required: <?php echo osclasswizards_locations_required(); ?>
 			},
 			cityId: {
-				required: <?php echo osclasswizards_locations_required(); ?>
+				required: <?php echo osclasswizards_city_required(); ?>
 			}
 			<?php } ?>
 			
@@ -1042,6 +1053,21 @@ function osclasswizards_locations_input_as(){
 }
 function osclasswizards_locations_required(){
 	return (osc_get_preference('locations_required', 'osclasswizards_theme') == '1')? 'true': 'false';
+}
+function osclasswizards_is_country_default() {
+    return (osc_get_preference('country_default', 'osclasswizards_theme') != '')? True: False;
+}
+function osclasswizards_is_region_default() {
+    return (osc_get_preference('region_default', 'osclasswizards_theme') != '')? True: False;
+}
+function osclasswizards_city_required(){
+    return (osc_get_preference('city_required', 'osclasswizards_theme') == '1')? 'true': 'false';
+}
+function osclasswizards_zone_required(){
+    return (osc_get_preference('zone_required', 'osclasswizards_theme') == '1')? True: False;
+}
+function osclasswizards_zipcode_required(){
+    return (osc_get_preference('zipcode_required', 'osclasswizards_theme') == '1')? True: False;
 }
 function osclasswizards_categories_select($name, $id, $label){
     $name = osc_esc_html($name);

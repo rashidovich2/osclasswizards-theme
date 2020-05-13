@@ -44,6 +44,34 @@
                 <div class="form-label"><?php _e('Description min. length', OSCLASSWIZARDS_THEME_FOLDER); ?></div>
                 <div class="form-controls"><input type="number" min="1" max="100" class="xlarge" name="description_minimum_length" value="<?php echo osc_esc_html( osc_get_preference('description_minimum_length', 'osclasswizards_theme') ); ?>"></div>
             </div>
+            <!-- -->
+            <div class="form-row">
+                <div class="form-label"><?php _e('Default country', OSCLASSWIZARDS_THEME_FOLDER); ?></div>
+                <div class="form-controls">
+                    <?php
+                    if(osclasswizards_is_country_default()) {
+                        $item["fk_c_country_code"]=osc_get_preference('country_default', 'osclasswizards_theme');
+                        ItemForm::country_select(osc_get_countries(), $item);
+                    } else {
+                        ItemForm::country_select(osc_get_countries(), null);
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-label"><?php _e('Default region', OSCLASSWIZARDS_THEME_FOLDER); ?></div>
+                <div class="form-controls">
+                    <?php
+                    if(osclasswizards_is_region_default()) {
+                        $item["fk_i_region_id"]=osc_get_preference('region_default', 'osclasswizards_theme');
+                        ItemForm::region_select(osc_get_regions(), $item);
+                    } else {
+                        ItemForm::region_select(osc_get_regions(), null);
+                    }
+                    ?>
+                </div>
+            </div>
+            <!-- -->
             <div class="form-row">
                 <div class="form-label"><?php _e('Locations input as', OSCLASSWIZARDS_THEME_FOLDER); ?></div>
                 <div class="form-controls">
@@ -60,6 +88,30 @@
 						<input type="checkbox" name="locations_required" value="1" <?php echo (osc_esc_html( osc_get_preference('locations_required', 'osclasswizards_theme') ) == "1")? "checked": ""; ?>>
 					</div>
 				</div>
+            </div>
+            <div class="form-row">
+                <div class="form-label"><?php _e('Town required', OSCLASSWIZARDS_THEME_FOLDER); ?></div>
+                <div class="form-controls">
+                    <div class="form-label-checkbox">
+                        <input type="checkbox" name="city_required" value="1" <?php echo (osc_esc_html( osc_get_preference('city_required', 'osclasswizards_theme') ) == "1")? "checked": ""; ?>>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-label"><?php _e('Zone required', OSCLASSWIZARDS_THEME_FOLDER); ?></div>
+                <div class="form-controls">
+                    <div class="form-label-checkbox">
+                        <input type="checkbox" name="zone_required" value="1" <?php echo (osc_esc_html( osc_get_preference('zone_required', 'osclasswizards_theme') ) == "1")? "checked": ""; ?>>
+                    </div>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-label"><?php _e('Zip Code required', OSCLASSWIZARDS_THEME_FOLDER); ?></div>
+                <div class="form-controls">
+                    <div class="form-label-checkbox">
+                        <input type="checkbox" name="zipcode_required" value="1" <?php echo (osc_esc_html( osc_get_preference('zipcode_required', 'osclasswizards_theme') ) == "1")? "checked": ""; ?>>
+                    </div>
+                </div>
             </div>
 		</div>
     </fieldset>
