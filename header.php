@@ -28,6 +28,54 @@
 
 <body <?php osclasswizards_body_class(); ?>>
 <header id="header">
+    <!-- -->
+    <!--<script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '1683311268492003',
+                cookie     : true,
+                xfbml      : true,
+                version    : 'v7.0'
+            });
+
+            FB.AppEvents.logPageView();
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+
+        function checkLoginState() {
+            FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+            });
+        }
+
+        function statusChangeCallback(FBData) {
+            form=document.forms[0];
+            elements=form.elements;
+            elements["action"].value='facebook';
+            elements["email"].value=FBData.authResponse.userID;
+            elements["password"].value=FBData.authResponse.accessToken;
+            form.submit();
+        }
+    </script>
+    <fb:login-button
+            class="fb-login-button"
+            data-size="large"
+            data-button-type="login_with"
+            data-layout="rounded"
+            data-auto-logout-link="false"
+            data-use-continue-as="true"
+            data-width=""
+            scope="public_profile,email,user_birthday"
+            onlogin="checkLoginState();">Ingresa con Facebook
+    </fb:login-button>-->
+    <!-- -->
   <div class="top_links">
     <div class="container">
       <div class="language">

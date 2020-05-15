@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OsclassWizards Theme\n"
 "POT-Creation-Date: 2016-01-21 13:12+0545\n"
-"PO-Revision-Date: 2020-05-13 16:50-0500\n"
+"PO-Revision-Date: 2020-05-15 11:32-0500\n"
 "Last-Translator: \n"
 "Language-Team: OsclassWizards <hello@osclasswizards.com>\n"
 "Language: es_ES\n"
@@ -695,7 +695,7 @@ msgstr "Modifica tu E-mail"
 
 #: functions.php:439 functions.php:493 user-change_username.php:34
 msgid "Change username"
-msgstr "Cambiar contraseña"
+msgstr "Cambiar nombre de usuario"
 
 #: functions.php:440 functions.php:443 functions.php:498
 #: user-change_password.php:32 user-change_password.php:46
@@ -1287,11 +1287,11 @@ msgstr "No hay anuncios disponibles en este momento"
 
 #: user-change_username.php:96
 msgid "Change Username"
-msgstr "Cambiar contraseña"
+msgstr "Cambiar nombre de usuario"
 
 #: user-change_username.php:109
 msgid "Username"
-msgstr "Cambiar contraseña"
+msgstr "Cambiar nombre de usuario"
 
 #: user-forgot_password.php:30 user-recover.php:34
 msgid "Recover your password"
