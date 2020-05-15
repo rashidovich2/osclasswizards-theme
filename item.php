@@ -149,7 +149,7 @@
           </li>
           <?php } ?>
           <li><a class="see_all" href="<?php echo osc_user_public_profile_url( osc_item_user_id() ); ?>">
-            <?php _e('See all ads from this advertiser', OSCLASSWIZARDS_THEME_FOLDER); ?>
+            <?php _e('See all ads from this advertiser"', OSCLASSWIZARDS_THEME_FOLDER); ?>
             </a> </li>
         </ul>
         <?php osc_run_hook('location'); ?>

@@ -26,7 +26,7 @@
 	
     osc_current_web_theme_path('header.php');
 ?>
-
+<script type="text/javascript" src="<?php echo osc_current_web_theme_js_url('third-party.js'); ?>"></script>
 <div class="row">
   <div class="col-lg-4 col-md-7" id="user-login">
     <div class="wraps">
@@ -35,7 +35,26 @@
           <?php _e('Please Login', OSCLASSWIZARDS_THEME_FOLDER); ?>
         </h1>
       </div>
-      <form action="<?php echo osc_base_url(true); ?>" method="post" >
+      <form action="<?php echo osc_base_url(true); ?>" method="post">
+          <br />
+          <table width="100%">
+              <tr>
+                  <td style="text-align: center; vertical-align: middle;">
+                      <fb:login-button
+                              class="fb-login-button"
+                              data-size="large"
+                              data-button-type="login_with"
+                              data-layout="rounded"
+                              data-auto-logout-link="false"
+                              data-use-continue-as="true"
+                              data-width=""
+                              scope="public_profile,email,user_birthday"
+                              onlogin="checkLoginState();">Ingresa con Facebook
+                      </fb:login-button>
+                  </td>
+              </tr>
+          </table>
+          <br />
         <input type="hidden" name="page" value="login" />
         <input type="hidden" name="action" value="login_post" />
         <div class="form-group">

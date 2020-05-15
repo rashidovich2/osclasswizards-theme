@@ -138,9 +138,11 @@
                   </div>
               <?php } ?>
               <?php
-              if (osclasswizards_is_region_default() && Params::getParam('action') != 'item_edit') { ?>
-                  <?php ItemForm::add_hidden_field("fk_i_region_id", osc_get_preference('region_default', 'osclasswizards_theme')); ?>
-              <?php } else { ?>
+              $region = osc_get_preference('region_default', 'osclasswizards_theme');
+              $region_data['fk_i_region_id']=$region;
+              if (osclasswizards_is_region_default() && Params::getParam('action') != 'item_edit') {
+                  ItemForm::add_hidden_field("fk_i_region_id", $region);
+              } else { ?>
                   <div class="form-group">
                       <label class="control-label" for="region">
                           <?php _e('Region', OSCLASSWIZARDS_THEME_FOLDER); ?>
@@ -153,7 +155,11 @@
                               }else{
                                   $aCountries = osc_get_countries();
                                   $aRegions = osc_get_regions($aCountries[0]['pk_c_code']);
-                                  ItemForm::region_select($aRegions,osc_user());
+                                  if(empty($region)) {
+                                      ItemForm::region_select($aRegions,osc_user());
+                                  } else {
+                                      ItemForm::region_select($aRegions,$region_data);
+                                  }
                               }
                           }else{
                               ItemForm::region_text(osc_user());
@@ -168,15 +174,11 @@
               </label>
               <div class="controls">
                 <?php
-                    $cities = null;
+                    $cities = osc_get_cities(osc_user_region_id());
                     if(osclasswizards_is_region_default()) {
-                        $cities = osc_get_cities(osc_get_preference('region_default', 'osclasswizards_theme'));
+                        $cities = osc_get_cities_by_region(osc_get_preference('region_default', 'osclasswizards_theme'));
                     }
-                    if(Params::getParam('action') != 'item_edit') {
-                        ItemForm::city_select($cities, osc_item());
-                    } else {
-                        ItemForm::city_select(osc_get_cities(osc_user_region_id()), osc_user());
-                    }
+                    ItemForm::city_select($cities, osc_item());
 			    ?>
               </div>
             </div>
