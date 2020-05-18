@@ -123,14 +123,14 @@
             <?php UserForm::address_text(osc_user()); ?>
           </div>
         </div>
-        <div class="form-group">
+        <!--<div class="form-group">
           <label class="control-label" for="webSite">
-            <?php _e('Website', OSCLASSWIZARDS_THEME_FOLDER); ?>
+            <?php /*_e('Website', OSCLASSWIZARDS_THEME_FOLDER); */?>
           </label>
           <div class="controls">
-            <?php UserForm::website_text(osc_user()); ?>
+            <?php /*UserForm::website_text(osc_user()); */?>
           </div>
-        </div>
+        </div>-->
         <div class="form-group">
           <label class="control-label" for="s_info">
             <?php _e('Description', OSCLASSWIZARDS_THEME_FOLDER); ?>

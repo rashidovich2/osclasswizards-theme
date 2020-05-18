@@ -34,8 +34,10 @@
     <li><a href="#templates-home"><?php _e('Home',OSCLASSWIZARDS_THEME_FOLDER);?></a></li>
     <li><a href="#templates-search"><?php _e('Search',OSCLASSWIZARDS_THEME_FOLDER);?></a></li>
 	<li><a href="#templates-item-post"><?php _e('Item Post',OSCLASSWIZARDS_THEME_FOLDER);?></a></li>
+    <li><a href="#templates-users"><?php _e('Users',OSCLASSWIZARDS_THEME_FOLDER);?></a></li>
 </ul>
 <div id="templates-home"><?php include 'templates-home.php'; ?></div>
 <div id="templates-search"><?php include 'templates-search.php'; ?></div>
 <div id="templates-item-post"><?php include 'templates-item-post.php';?></div>
+<div id="templates-users"><?php include 'templates-users.php'; ?></div>
 </div>
