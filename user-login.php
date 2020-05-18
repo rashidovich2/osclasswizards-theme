@@ -26,7 +26,9 @@
 	
     osc_current_web_theme_path('header.php');
 ?>
+<?php if(osc_get_preference('facebook_login', 'osclasswizards_theme') == "1") { ?>
 <script type="text/javascript" src="<?php echo osc_current_web_theme_js_url('third-party.js'); ?>"></script>
+<?php } ?>
 <div class="row">
   <div class="col-lg-4 col-md-7" id="user-login">
     <div class="wraps">
@@ -36,6 +38,7 @@
         </h1>
       </div>
       <form action="<?php echo osc_base_url(true); ?>" method="post">
+          <?php if(osc_get_preference('facebook_login', 'osclasswizards_theme') == "1") { ?>
           <br />
           <table width="100%">
               <tr>
@@ -55,6 +58,7 @@
               </tr>
           </table>
           <br />
+          <?php } ?>
         <input type="hidden" name="page" value="login" />
         <input type="hidden" name="action" value="login_post" />
         <div class="form-group">

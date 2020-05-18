@@ -474,36 +474,40 @@ DEFINES
                 'url'   => osc_user_list_items_url(),
                 'class' => 'opt_items'
             );
-            $options[] = array(
+            /*$options[] = array(
                 'name' => __('Alerts', OSCLASSWIZARDS_THEME_FOLDER),
                 'url' => osc_user_alerts_url(),
                 'class' => 'opt_alerts'
-            );
+            );*/
             $options[] = array(
                 'name'  => __('Account', OSCLASSWIZARDS_THEME_FOLDER),
                 'url'   => osc_user_profile_url(),
                 'class' => 'opt_account'
             );
-            $options[] = array(
-                'name'  => __('Change email', OSCLASSWIZARDS_THEME_FOLDER),
-                'url'   => osc_change_user_email_url(),
-                'class' => 'opt_change_email'
-            );
+            if(!strpos(osc_user_website(), 'facebook')) {
+                $options[] = array(
+                    'name'  => __('Change email', OSCLASSWIZARDS_THEME_FOLDER),
+                    'url'   => osc_change_user_email_url(),
+                    'class' => 'opt_change_email'
+                );
+            }
             $options[] = array(
                 'name'  => __('Change username', OSCLASSWIZARDS_THEME_FOLDER),
                 'url'   => osc_change_user_username_url(),
                 'class' => 'opt_change_username'
             );
-            $options[] = array(
-                'name'  => __('Change password', OSCLASSWIZARDS_THEME_FOLDER),
-                'url'   => osc_change_user_password_url(),
-                'class' => 'opt_change_password'
-            );
-            $options[] = array(
+            if(!strpos(osc_user_website(), 'facebook')) {
+                $options[] = array(
+                    'name'  => __('Change password', OSCLASSWIZARDS_THEME_FOLDER),
+                    'url'   => osc_change_user_password_url(),
+                    'class' => 'opt_change_password'
+                );
+            }
+            /*$options[] = array(
                 'name'  => __('Delete account', OSCLASSWIZARDS_THEME_FOLDER),
                 'url'   => '#',
                 'class' => 'opt_delete_account'
-            );
+            );*/
 
             return $options;
         }
@@ -583,6 +587,12 @@ DEFINES
 				
 				osc_add_flash_ok_message(__('Templates settings updated correctly', OSCLASSWIZARDS_THEME_FOLDER), 'admin');
 				osc_redirect_to(osc_admin_render_theme_url( 'oc-content/themes/'.OSCLASSWIZARDS_THEME_FOLDER.'/admin/settings.php#templates' ));			break;
+            case('templates_users'):
+                $facebook_login	=	Params::getParam('facebook_login', 'osclasswizards_theme');
+                osc_set_preference('facebook_login', ($facebook_login ? '1' : '0'), 'osclasswizards_theme');
+
+                osc_add_flash_ok_message(__('Templates settings updated correctly', OSCLASSWIZARDS_THEME_FOLDER), 'admin');
+                osc_redirect_to(osc_admin_render_theme_url( 'oc-content/themes/'.OSCLASSWIZARDS_THEME_FOLDER.'/admin/settings.php#templates' ));			break;
 			case('templates_item_post'):
 				$locations_input_as	=	Params::getParam('locations_input_as', 'osclasswizards_theme');
 				$locations_required	=	Params::getParam('locations_required', 'osclasswizards_theme');

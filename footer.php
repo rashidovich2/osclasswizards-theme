@@ -69,9 +69,9 @@
         <?php
         }
         ?>
-        <li> <a href="<?php echo osc_contact_url(); ?>">
-          <?php _e('Contact', OSCLASSWIZARDS_THEME_FOLDER); ?>
-          </a> </li>
+        <!--<li> <a href="<?php /*echo osc_contact_url(); */?>">
+          <?php /*_e('Contact', OSCLASSWIZARDS_THEME_FOLDER); */?>
+          </a> </li>-->
         <?php if( osc_users_enabled() || ( !osc_users_enabled() && !osc_reg_user_post() )) { ?>
         <li class="publish"> <a href="<?php echo osc_item_post_url_in_category(); ?>">
           <?php _e("Publish your ad for free", OSCLASSWIZARDS_THEME_FOLDER);?>
@@ -79,8 +79,8 @@
         <?php } ?>
       </ul>
       <?php
-            echo '<div class="copyright">' . sprintf(__('Free responsive Osclass theme by <a target="_blank" title="osclasswizards" href="%s">OsclassWizards</a>',OSCLASSWIZARDS_THEME_FOLDER), 'http://www.osclasswizards.com/') . '</div>';
-        ?>
+/*            echo '<div class="copyright">' . sprintf(__('Free responsive Osclass theme by <a target="_blank" title="osclasswizards" href="%s">OsclassWizards</a>',OSCLASSWIZARDS_THEME_FOLDER), 'http://www.osclasswizards.com/') . '</div>';
+        */?>
     </div>
   </div>
 </footer>
