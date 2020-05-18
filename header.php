@@ -170,11 +170,11 @@
                 </div>
               </div>
               <?php } ?>
-              <div class="col-md-2">
+              <!--<div class="col-md-2">
                 <div class="cell selector">
-                  <?php osclasswizards_regions_select('sRegion', 'sRegion', __('Select a region', OSCLASSWIZARDS_THEME_FOLDER)) ; ?>
+                  <?php /*osclasswizards_regions_select('sRegion', 'sRegion', __('Select a region', OSCLASSWIZARDS_THEME_FOLDER)) ; */?>
                 </div>
-              </div>
+              </div>-->
               <div class="col-md-2">
                 <div class="cell selector">
                   <?php osclasswizards_cities_select('sCity', 'sCity', __('Select a city', OSCLASSWIZARDS_THEME_FOLDER)) ; ?>
