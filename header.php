@@ -151,7 +151,8 @@
           <div class="form-filters">
             <div class="row">
               <?php $showCountry  = (osc_get_preference('show_search_country', 'osclasswizards_theme') == '1') ? true : false; ?>
-              <div class="col-md-<?php echo ($showCountry)? '3' : '4'; ?>">
+              <!--<div class="col-md-<?php /*echo ($showCountry)? '3' : '4'; */?>">-->
+              <div class="col-md-4">
                 <div class="cell">
                   <input type="text" name="sPattern" id="query" class="input-text" value="" placeholder="<?php echo osc_esc_html(__(osc_get_preference('keyword_placeholder', 'osclasswizards_theme'), OSCLASSWIZARDS_THEME_FOLDER)); ?>" />
                 </div>
@@ -163,13 +164,13 @@
                 </div>
                 <?php  } ?>
               </div>
-              <?php if($showCountry) { ?>
+              <?php /*if($showCountry) { */?><!--
               <div class="col-md-2">
                 <div class="cell selector">
-                  <?php osclasswizards_countries_select('sCountry', 'sCountry', __('Select a country', OSCLASSWIZARDS_THEME_FOLDER));?>
+                  <?php /*osclasswizards_countries_select('sCountry', 'sCountry', __('Select a country', OSCLASSWIZARDS_THEME_FOLDER));*/?>
                 </div>
               </div>
-              <?php } ?>
+              --><?php /*} */?>
               <!--<div class="col-md-2">
                 <div class="cell selector">
                   <?php /*osclasswizards_regions_select('sRegion', 'sRegion', __('Select a region', OSCLASSWIZARDS_THEME_FOLDER)) ; */?>
