@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: OsclassWizards Theme\n"
 "POT-Creation-Date: 2016-01-21 13:12+0545\n"
-"PO-Revision-Date: 2020-05-15 11:32-0500\n"
+"PO-Revision-Date: 2020-05-18 17:52-0500\n"
 "Last-Translator: \n"
 "Language-Team: OsclassWizards <hello@osclasswizards.com>\n"
 "Language: es_ES\n"
@@ -861,7 +861,7 @@ msgstr "Selecciona una categoría"
 
 #: header.php:144 search-sidebar.php:61
 msgid "Select a country"
-msgstr ""
+msgstr "Selecciona un país"
 
 #: header.php:150 search-sidebar.php:70
 msgid "Select a region"

@@ -140,9 +140,9 @@
             <?php     } ?>
             <?php } ?>
           </li>
-          <li><a href="<?php echo osc_item_send_friend_url(); ?>" rel="nofollow">
-            <?php _e('Share', OSCLASSWIZARDS_THEME_FOLDER); ?>
-            </a></li>
+          <!--<li><a href="<?php /*echo osc_item_send_friend_url(); */?>" rel="nofollow">
+            <?php /*_e('Share', OSCLASSWIZARDS_THEME_FOLDER); */?>
+            </a></li>-->
           <?php if(function_exists('watchlist')) {?>
           <li>
             <?php watchlist(); ?>
