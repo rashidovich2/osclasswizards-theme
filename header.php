@@ -111,9 +111,9 @@
                         }
                       osc_reset_static_pages();
                         ?>
-                        <li class="nav-item"> <a class="nav-link" href="<?php echo osc_contact_url(); ?>">
-                          <?php _e('Contact', OSCLASSWIZARDS_THEME_FOLDER); ?>
-                          </a> </li>
+                        <!--<li class="nav-item"> <a class="nav-link" href="<?php /*echo osc_contact_url(); */?>">
+                          <?php /*_e('Contact', OSCLASSWIZARDS_THEME_FOLDER); */?>
+                          </a> </li>-->
                     </ul>
                 </div>
             
