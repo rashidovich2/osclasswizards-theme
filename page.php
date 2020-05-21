@@ -27,15 +27,22 @@
 ?>
 
 <div class="title">
-  <h1><?php echo osc_static_page_title(); ?></h1>
+    <div class="ec-cart-widget"></div>
+    <div>
+        <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?30045051&data_platform=code&data_date=2020-05-21" charset="utf-8"></script>
+        <script type="text/javascript">Ecwid.init();</script>
+    </div>
+    <h1><?php echo osc_static_page_title(); ?></h1>
+    <div class="ec-cart-widget"></div>
+    <div>
+        <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?30045051&data_platform=code&data_date=2020-05-21" charset="utf-8"></script>
+        <script type="text/javascript">Ecwid.init();</script>
+    </div>
 </div>
-<div class="pull-right">
-    <div class="ec-cart-widget"></div>&nbsp;<div id="my-search-30045051"></div>
+<div id="my-search-30045051"></div>
+<div>
     <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?30045051&data_platform=code&data_date=2020-05-21" charset="utf-8"></script>
     <script type="text/javascript"> xSearch("id=my-search-30045051"); </script>
-    <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?30045051&data_platform=code&data_date=2020-05-21" charset="utf-8"></script>
-    <script type="text/javascript">Ecwid.init();</script>
-</div>
 </div>
 <div id="my-categories-30045051"></div>
 <div>
