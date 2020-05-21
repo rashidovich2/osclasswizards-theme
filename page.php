@@ -29,5 +29,11 @@
 <div class="title">
   <h1><?php echo osc_static_page_title(); ?></h1>
 </div>
+<div id="my-store-30045051"></div>
+<div>
+    <script data-cfasync="false"
+            type="text/javascript"
+            src="https://app.ecwid.com/script.js?30045051&data_platform=code&data_date=2020-05-21" charset="utf-8"></script><script type="text/javascript"> xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-30045051");</script>
+</div>
 <?php echo osc_static_page_text(); ?>
 <?php osc_current_web_theme_path('footer.php') ; ?>
