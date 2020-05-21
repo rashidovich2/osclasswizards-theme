@@ -27,17 +27,19 @@
 ?>
 
 <div class="title">
+    <h1>
     <div class="ec-cart-widget"></div>
     <div>
         <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?30045051&data_platform=code&data_date=2020-05-21" charset="utf-8"></script>
         <script type="text/javascript">Ecwid.init();</script>
     </div>
-    <h1><div class="ec-cart-widget"></div><?php echo osc_static_page_title(); ?><div class="ec-cart-widget"></div></h1>
-    <div class="ec-cart-widget"></div>
-    <div>
-        <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?30045051&data_platform=code&data_date=2020-05-21" charset="utf-8"></script>
-        <script type="text/javascript">Ecwid.init();</script>
-    </div>
+    <?php echo osc_static_page_title(); ?>
+        <div class="ec-cart-widget"></div>
+        <div>
+            <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?30045051&data_platform=code&data_date=2020-05-21" charset="utf-8"></script>
+            <script type="text/javascript">Ecwid.init();</script>
+        </div>
+    </h1>
 </div>
 <div id="my-search-30045051"></div>
 <div>
